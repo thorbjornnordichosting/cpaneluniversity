@@ -1809,7 +1809,7 @@ export default function Quiz() {
       return (
         <main className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-12 px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 mb-8">
+            <div className="bg-white/5 backdrop-blur-3xl rounded-3xl p-8 border border-white/10 shadow-2xl shadow-blue-500/10 mb-8">
               <h2 className="text-4xl font-bold text-white mb-4 text-center">Detaljerad Rapport 📊</h2>
               <p className="text-2xl text-blue-200 mb-2 text-center">
                 Slutresultat: {score} av {questions.length} rätt ({Math.round((score / questions.length) * 100)}%)
@@ -1848,7 +1848,7 @@ export default function Quiz() {
                 const userAnswer = userAnswers[qIndex]
                 const isCorrect = userAnswer === q.correctAnswer
                 return (
-                  <div key={qIndex} className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+                  <div key={qIndex} className="bg-white/5 backdrop-blur-3xl rounded-3xl p-6 border border-white/10 shadow-xl shadow-blue-500/5">
                     <div className="flex items-start gap-4 mb-4">
                       <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold ${isCorrect ? 'bg-green-500' : 'bg-red-500'}`}>
                         {isCorrect ? '✓' : '✗'}
@@ -1864,12 +1864,12 @@ export default function Quiz() {
                       {q.answers.map((answer, aIndex) => (
                         <div
                           key={aIndex}
-                          className={`p-4 rounded-lg ${
+                          className={`p-4 rounded-2xl backdrop-blur-xl shadow-lg ${
                             aIndex === q.correctAnswer
-                              ? 'bg-green-500/20 border-2 border-green-500'
+                              ? 'bg-green-500/15 border-2 border-green-400/50 shadow-green-500/20'
                               : userAnswer === aIndex
-                              ? 'bg-red-500/20 border-2 border-red-500'
-                              : 'bg-white/5'
+                              ? 'bg-red-500/15 border-2 border-red-400/50 shadow-red-500/20'
+                              : 'bg-white/5 border border-white/10'
                           }`}
                         >
                           <div className="flex items-center gap-3">
@@ -1888,7 +1888,7 @@ export default function Quiz() {
                       ))}
                     </div>
 
-                    <div className="ml-14 mt-4 p-4 bg-blue-500/10 rounded-lg border border-blue-500/30">
+                    <div className="ml-14 mt-4 p-4 bg-blue-500/10 backdrop-blur-xl rounded-2xl border border-blue-400/20 shadow-lg shadow-blue-500/10">
                       <p className="text-sm font-bold text-blue-300 mb-2">Förklaring:</p>
                       <p className="text-sm text-blue-200">{q.explanation}</p>
                     </div>
@@ -1899,7 +1899,7 @@ export default function Quiz() {
 
             {/* Footer knappar */}
             <div className="mt-8 text-center">
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+              <div className="bg-white/5 backdrop-blur-3xl rounded-3xl p-6 border border-white/10 shadow-xl shadow-blue-500/5">
                 <p className="text-white text-lg mb-4">
                   Slutresultat: {score} av {questions.length} rätt ({Math.round((score / questions.length) * 100)}%)
                 </p>
@@ -1928,7 +1928,7 @@ export default function Quiz() {
     return (
       <main className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center px-4">
         <div className="max-w-2xl w-full">
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 text-center">
+          <div className="bg-white/5 backdrop-blur-3xl rounded-3xl p-8 border border-white/10 shadow-2xl shadow-blue-500/10 text-center">
             <div className="mb-6">
               <svg className="w-20 h-20 mx-auto text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -2003,7 +2003,7 @@ export default function Quiz() {
 
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="space-y-6">
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+              <div className="bg-white/5 backdrop-blur-3xl rounded-3xl p-8 border border-white/10 shadow-2xl shadow-blue-500/10">
                 <h2 className="text-2xl font-bold text-white mb-8 leading-relaxed">
                   {question.question}
                 </h2>
@@ -2015,15 +2015,15 @@ export default function Quiz() {
                       onClick={() => handleAnswerClick(index)}
                       disabled={answered}
                       className={`
-                        w-full p-5 rounded-xl font-semibold text-lg text-left transition-all
-                        ${!answered && 'hover:scale-102 hover:shadow-lg'}
+                        w-full p-5 rounded-2xl font-semibold text-lg text-left transition-all backdrop-blur-xl
+                        ${!answered && 'hover:scale-102 hover:shadow-2xl hover:shadow-blue-500/20'}
                         ${selectedAnswer === index && index === question.correctAnswer
-                          ? 'bg-green-500/30 border-2 border-green-500 text-white'
+                          ? 'bg-green-500/20 border-2 border-green-400/50 text-white shadow-lg shadow-green-500/20'
                           : selectedAnswer === index && index !== question.correctAnswer
-                          ? 'bg-red-500/30 border-2 border-red-500 text-white'
+                          ? 'bg-red-500/20 border-2 border-red-400/50 text-white shadow-lg shadow-red-500/20'
                           : answered && index === question.correctAnswer
-                          ? 'bg-green-500/30 border-2 border-green-500 text-white'
-                          : 'bg-white/20 border-2 border-transparent text-blue-100 hover:bg-white/30'
+                          ? 'bg-green-500/20 border-2 border-green-400/50 text-white shadow-lg shadow-green-500/20'
+                          : 'bg-white/10 border-2 border-white/20 text-blue-100 hover:bg-white/20 hover:border-white/30'
                         }
                       `}
                     >
@@ -2039,7 +2039,7 @@ export default function Quiz() {
               </div>
 
               <div className="text-center">
-                <div className="inline-block bg-white/10 backdrop-blur-lg rounded-xl px-6 py-3 border border-white/20">
+                <div className="inline-block bg-white/5 backdrop-blur-2xl rounded-2xl px-6 py-3 border border-white/10 shadow-lg shadow-blue-500/10">
                   <span className="text-blue-200 text-lg font-semibold">
                     Poäng: {score} / {questions.length}
                   </span>
@@ -2051,10 +2051,10 @@ export default function Quiz() {
               {showExplanation && (
                 <div className="animate-fade-in space-y-6">
                   <div className={`
-                    p-6 rounded-2xl border-2 text-center
+                    p-6 rounded-3xl border-2 text-center backdrop-blur-2xl shadow-xl
                     ${selectedAnswer === question.correctAnswer
-                      ? 'bg-green-500/20 border-green-500'
-                      : 'bg-red-500/20 border-red-500'
+                      ? 'bg-green-500/15 border-green-400/50 shadow-green-500/20'
+                      : 'bg-red-500/15 border-red-400/50 shadow-red-500/20'
                     }
                   `}>
                     <div className="text-4xl mb-2">
@@ -2065,7 +2065,7 @@ export default function Quiz() {
                     </div>
                   </div>
 
-                  <div className="glass-effect-blue rounded-2xl p-8 glass-border">
+                  <div className="bg-blue-500/10 backdrop-blur-3xl rounded-3xl p-8 border border-blue-400/20 shadow-xl shadow-blue-500/10">
                     <h3 className="text-xl font-bold text-white mb-4 flex items-center">
                       <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -2077,8 +2077,8 @@ export default function Quiz() {
                     </p>
                   </div>
 
-                  <div className="glass-effect rounded-2xl p-8 max-h-[520px] overflow-y-auto example-scroll scroll-gradient glass-border">
-                    <h3 className="text-xl font-bold text-white mb-4 flex items-center sticky top-0 glass-header pb-4 -mx-8 px-8 pt-2 z-10">
+                  <div className="bg-purple-500/10 backdrop-blur-3xl rounded-3xl p-8 max-h-[520px] overflow-y-auto border border-purple-400/20 shadow-xl shadow-purple-500/10">
+                    <h3 className="text-xl font-bold text-white mb-4 flex items-center sticky top-0 bg-purple-500/20 backdrop-blur-xl pb-4 -mx-8 px-8 pt-2 z-10 rounded-t-3xl">
                       <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
@@ -2099,7 +2099,7 @@ export default function Quiz() {
               )}
 
               {!showExplanation && (
-                <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-12 border border-white/10 flex items-center justify-center min-h-[400px]">
+                <div className="bg-white/3 backdrop-blur-3xl rounded-3xl p-12 border border-white/10 shadow-2xl shadow-purple-500/10 flex items-center justify-center min-h-[400px]">
                   <div className="text-center text-blue-300">
                     <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
