@@ -1202,7 +1202,7 @@ Rätt svar: c. /usr/local/bin/ea_php_defaults`
   },
   {
     id: 20,
-    question: "När du arbetar inom en cPanel & WHM-miljö, vilket av följande gränssnitt kan du använda för att ändra serverns standard PHP-version?",
+    question: "När du arbetar inom en cPanel & WHM-miljö, vilket av dessa kommandon visar alla tillgängliga EasyApache 4-paket från serverns kommandorad?",
     answers: [
       "yum find \"ea-*\"",
       "rpm show \"ea-*\"",
@@ -1328,7 +1328,7 @@ Rätt svar: c. Tråd`
   },
   {
     id: 24,
-    question: "Which of the following items can be described as any of the three things listed below? A command line program for installing software. A file format used to package software. The individual packages created in that format.",
+    question: "Vilket av följande termer kan beskrivas som en speciell textsträngsyntax som används för att beskriva ett sökmönster?",
     answers: [
       "Wildcard",
       "Algoritm",
@@ -1470,7 +1470,7 @@ Rätt svar: a. RPM`
   },
   {
     id: 29,
-    question: "Which of the following best describes the highlighted portion '2326' in this Apache access log: '127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326'?",
+    question: "Vilket av följande beskriver bäst den markerade delen '2326' i denna Apache access log: '127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326'?",
     answers: [
       "HTTP-statuskoden.",
       "Tiden det tog att slutföra förfrågan (i sekunder).",
