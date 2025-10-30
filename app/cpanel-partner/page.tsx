@@ -97,7 +97,7 @@ export default function CpanelPartner() {
         </div>
       </div>
 
-      <footer className="absolute bottom-0 left-0 right-0 p-6 text-center">
+      <footer className="relative mt-16 p-6 text-center">
         <p className="text-orange-300 text-sm">
           © 2025 cPanel University - Powered by LiteSpeed ⚡
         </p>
