@@ -28,14 +28,24 @@ export default function CpanelPartner() {
               <h2 className="text-5xl font-bold text-white mb-4">
                 cPanel Certified Partner Accreditation
               </h2>
-              <div className="inline-block px-6 py-2 bg-orange-500/20 rounded-full border border-orange-400/30 mb-6">
-                <span className="text-orange-300 font-semibold">🚧 Kommer snart!</span>
-              </div>
             </div>
 
             <p className="text-xl text-orange-100 mb-8 leading-relaxed">
-              Denna kurs är under utveckling och kommer att innehålla allt du behöver veta för att bli en certifierad cPanel-partner.
+              Testa dina kunskaper om cPanel & WHM för att bli en certifierad cPanel-partner!
             </p>
+
+            <Link
+              href="/cpanel-partner/quiz"
+              className="inline-block mb-12 group relative px-16 py-8 bg-gradient-to-r from-orange-600 via-orange-500 to-red-500 rounded-3xl font-bold text-white text-3xl md:text-4xl shadow-2xl hover:shadow-orange-500/50 transform hover:scale-105 transition-all duration-300"
+            >
+              <span className="relative z-10 flex items-center space-x-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Starta Quiz</span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-600 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+            </Link>
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-orange-300/10">
@@ -65,10 +75,16 @@ export default function CpanelPartner() {
 
             <div className="flex gap-4 justify-center flex-wrap">
               <Link
+                href="/cpanel-partner/quiz"
+                className="px-8 py-4 bg-gradient-to-r from-orange-600 to-red-500 rounded-2xl font-bold text-white hover:shadow-lg hover:scale-105 transition-all"
+              >
+                Starta cPanel Quiz →
+              </Link>
+              <Link
                 href="/quiz"
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl font-bold text-white hover:shadow-lg hover:scale-105 transition-all"
               >
-                ← Prova LiteSpeed-kursen
+                LiteSpeed Quiz
               </Link>
               <Link
                 href="/"
