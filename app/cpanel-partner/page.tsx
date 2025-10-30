@@ -73,22 +73,22 @@ export default function CpanelPartner() {
               </div>
             </div>
 
-            <div className="flex gap-6 justify-center flex-wrap items-center">
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center w-full max-w-3xl mx-auto">
               <Link
                 href="/cpanel-partner/quiz"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-orange-600 to-red-500 rounded-2xl font-bold text-white hover:shadow-lg hover:scale-105 transition-all"
+                className="w-full md:w-auto text-center px-10 py-4 bg-gradient-to-r from-orange-600 to-red-500 rounded-2xl font-bold text-white hover:shadow-lg hover:scale-105 transition-all shadow-xl"
               >
                 Starta cPanel Quiz →
               </Link>
               <Link
                 href="/quiz"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl font-bold text-white hover:shadow-lg hover:scale-105 transition-all"
+                className="w-full md:w-auto text-center px-10 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl font-bold text-white hover:shadow-lg hover:scale-105 transition-all shadow-xl"
               >
                 LiteSpeed Quiz
               </Link>
               <Link
                 href="/"
-                className="inline-block px-8 py-4 bg-white/20 backdrop-blur-xl rounded-2xl font-bold text-white hover:bg-white/30 transition-all"
+                className="w-full md:w-auto text-center px-10 py-4 bg-white/20 backdrop-blur-xl rounded-2xl font-bold text-white hover:bg-white/30 transition-all shadow-xl"
               >
                 Tillbaka hem
               </Link>
