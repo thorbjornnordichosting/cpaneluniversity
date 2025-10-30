@@ -1855,9 +1855,9 @@ export default function CpanelPartnerQuiz() {
                     </p>
                   </div>
 
-                  <div className="rounded-3xl p-8 max-h-[520px] overflow-y-auto border-2 border-purple-400/30 shadow-2xl" style={{background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(168, 85, 247, 0.12) 50%, rgba(192, 132, 252, 0.15) 100%)', boxShadow: '0 10px 40px rgba(139, 92, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'}}>
-                    <h3 className="text-xl font-bold text-white mb-4 flex items-center sticky top-0 pb-4 -mx-8 px-8 pt-2 z-10 rounded-t-3xl border-b-2 border-purple-300/30" style={{background: 'linear-gradient(180deg, rgba(139, 92, 246, 0.25) 0%, rgba(139, 92, 246, 0.15) 100%)', boxShadow: '0 2px 10px rgba(139, 92, 246, 0.2)'}}>
-                      <svg className="w-6 h-6 mr-2 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="rounded-3xl p-8 max-h-[520px] overflow-y-auto border-2 border-purple-400/50 shadow-2xl bg-gradient-to-br from-purple-900/95 via-violet-800/95 to-purple-900/95" style={{boxShadow: '0 10px 40px rgba(139, 92, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)'}}>
+                    <h3 className="text-xl font-bold text-white mb-4 flex items-center sticky top-0 pb-4 -mx-8 px-8 pt-2 z-10 rounded-t-3xl border-b-2 border-purple-300/40 bg-gradient-to-b from-purple-800 to-purple-900/90" style={{boxShadow: '0 2px 10px rgba(139, 92, 246, 0.3)'}}>
+                      <svg className="w-6 h-6 mr-2 text-purple-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
                       Verkligt Exempel
