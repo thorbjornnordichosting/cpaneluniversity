@@ -316,6 +316,229 @@ EasyApache 4 låter INTE dig:
 Rätt svar: b. Change the MPM that is used in your Apache installation.
 
 Detta är en av de viktigaste funktionerna i EasyApache 4! 🎯`
+  },
+  {
+    id: 3,
+    question: "If a user wants to utilize the system default version of PHP, which of the following options would they set for their account?",
+    answers: [
+      "system",
+      "ea-php55",
+      "inherit",
+      "default"
+    ],
+    correctAnswer: 2,
+    explanation: "För att använda systemets standard PHP-version sätter användaren 'inherit' för sitt konto. Detta gör att kontot ärver den globala standard PHP-versionen som är inställd av serverns administratör i WHM. Om administratören ändrar systemstandarden kommer alla konton med 'inherit' automatiskt att använda den nya versionen.",
+    example: `VERKLIGT SCENARIO - PHP Version Management med inherit:
+
+🏢 FÖRETAG: "WebHost Nordic" - Webbhotell med 1,000 cPanel-konton
+📊 UTMANING: Hantera PHP-uppgraderingar effektivt
+🎯 LÖSNING: Använd "inherit" för att centralisera PHP-versionshantering
+
+---
+
+🔧 PHP VERSION-ALTERNATIV I cPanel:
+
+1. INHERIT (Systemstandard):
+   • Ärver WHM:s globala standard
+   • Ändras automatiskt om admin ändrar systemstandard
+   • Rekommenderas för de flesta användare
+
+2. SPECIFIC VERSION (ea-php74, ea-php81, etc):
+   • Låst till specifik version
+   • Ändras INTE även om systemstandard ändras
+   • Bra för kompatibilitetskrav
+
+3. SYSTEM/DEFAULT:
+   • Dessa alternativ FINNS INTE i moderna cPanel!
+   • "inherit" är det korrekta sättet
+
+---
+
+❌ FÖRE "inherit" - Manuell hantering:
+
+SCENARIO: Admin vill uppgradera från PHP 7.4 till PHP 8.1
+
+MÅNAD 1 - Sätter PHP 8.1 som systemstandard:
+WHM → MultiPHP Manager → System Domain → PHP 8.1
+
+PROBLEM:
+• 1,000 konton har "ea-php74" hårdkodat
+• De får INTE uppgraderingen automatiskt
+• Admin måste manuellt ändra varje konto
+• Tar 40 timmar arbete!
+• Kostar 20,000 kr i arbetstid
+
+RESULTAT: 😰 Frustrerad admin, försenad uppgradering
+
+---
+
+✅ MED "inherit" - Automatisk hantering:
+
+SETUP - Alla nya konton får "inherit":
+WHM → Tweak Settings → Default PHP Version: PHP 7.4
+Nya konton → Får automatiskt "inherit"
+
+MÅNAD 1 - 800 konton använder "inherit"
+MÅNAD 2 - 900 konton använder "inherit"
+MÅNAD 3 - 950 konton använder "inherit"
+
+UPPGRADERINGSTID - Admin ändrar systemstandard:
+WHM → MultiPHP Manager → System Domain → PHP 8.1
+
+RESULTAT: ✅ Alla 950 konton uppgraderas AUTOMATISKT!
+• 0 minuter arbete
+• 0 kr kostnad
+• Alla kunder får PHP 8.1 direkt
+• Perfekt! 🎉
+
+---
+
+📊 VERKLIGT EXEMPEL - 3 kunder:
+
+KUND A: "ModernShop.se"
+PHP Setting: inherit
+Systemstandard: PHP 7.4
+→ Kund får: PHP 7.4 ✅
+
+KUND B: "LegacyApp.se" 
+PHP Setting: ea-php56 (hårdkodat)
+Systemstandard: PHP 7.4
+→ Kund får: PHP 5.6 (behöver gammal version)
+
+KUND C: "TestSite.se"
+PHP Setting: inherit
+Systemstandard: PHP 7.4
+→ Kund får: PHP 7.4 ✅
+
+ADMIN UPPGRADERAR SYSTEMSTANDARD → PHP 8.1:
+
+KUND A: "ModernShop.se"
+PHP Setting: inherit
+Systemstandard: PHP 8.1
+→ Kund får: PHP 8.1 ✅ AUTOMATISKT!
+
+KUND B: "LegacyApp.se"
+PHP Setting: ea-php56
+Systemstandard: PHP 8.1
+→ Kund får: PHP 5.6 (oförändrat, behöver gammal)
+
+KUND C: "TestSite.se"
+PHP Setting: inherit
+Systemstandard: PHP 8.1
+→ Kund får: PHP 8.1 ✅ AUTOMATISKT!
+
+---
+
+🔬 TEKNISKA DETALJER:
+
+KOLLA PHP-VERSION för ett konto:
+WHM → MultiPHP Manager → Visa alla domäner
+
+ÄNDRA SYSTEMSTANDARD:
+WHM → MultiPHP Manager 
+→ System Domain dropdown → Välj version
+→ Apply
+
+ÄNDRA FÖR SPECIFIKT KONTO:
+WHM → MultiPHP Manager
+→ Hitta domän → Välj "inherit" eller specifik version
+→ Apply
+
+FRÅN cPanel (kund-vy):
+cPanel → Software → MultiPHP Manager
+→ Välj domän → Välj "inherit" eller version
+→ Apply
+
+---
+
+💡 BEST PRACTICES:
+
+REKOMMENDERA "inherit" för:
+✅ Nya konton (default)
+✅ Kunder som vill ha senaste stabila
+✅ Kunder utan speciella krav
+✅ WordPress, Joomla, Drupal (moderna)
+
+REKOMMENDERA SPECIFIK VERSION för:
+✅ Legacy-applikationer
+✅ Kunder med kompatibilitetskrav
+✅ Produktionsmiljöer som inte kan ändras
+✅ Specifika plugin-krav
+
+---
+
+🎯 VERKLIG MIGRERINGSPLAN:
+
+FÖRETAG: "HostNordic" - Uppgradera 2,000 konton till PHP 8.2
+
+VECKA 1 - Förberedelse:
+• Testa PHP 8.2 på testkonton
+• Skicka mail: "Vi uppgraderar till PHP 8.2 om 2 veckor"
+• Kunder med problem: Sätt specifik version
+
+VECKA 2 - Kommunikation:
+• 1,600 konton har "inherit" (bra!)
+• 300 konton har specifik version (behåller sin)
+• 100 konton vill testa först
+
+VECKA 3 - UPPGRADERING:
+Admin ändrar systemstandard i WHM:
+• PHP 7.4 → PHP 8.2
+• Klickar "Apply"
+• Tar 5 sekunder!
+
+RESULTAT:
+• 1,600 konton uppgraderade AUTOMATISKT ✅
+• 300 konton behåller sin version ✅
+• 100 konton kan testa och sedan byta till "inherit"
+• Total arbetstid: 10 minuter
+• Kostnad: 100 kr
+
+JÄMFÖRT MED manuell uppgradering:
+• Arbetstid utan "inherit": 80 timmar
+• Kostnad: 40,000 kr
+• BESPARING: 39,900 kr! 💰
+
+---
+
+❌ VARFÖR ANDRA ALTERNATIV ÄR FEL:
+
+a. "system"
+→ Detta alternativ FINNS INTE i MultiPHP Manager!
+→ Förvirrande namn
+
+b. "ea-php55"
+→ Detta är en SPECIFIK version (PHP 5.5)
+→ INTE systemstandard
+
+d. "default"
+→ Detta alternativ FINNS INTE heller!
+→ "inherit" är rätt term
+
+✅ c. "inherit"
+→ RÄTT! Detta är det korrekta alternativet
+→ Ärver systemets standard PHP-version
+
+---
+
+🏆 SAMMANFATTNING:
+
+För att använda systemets standard PHP:
+✅ Sätt kontot till "inherit"
+
+FÖRDELAR:
+⚡ Automatiska uppgraderingar
+💰 Spar administration
+🎯 Centraliserad hantering
+🛡️ Enklare säkerhetsuppdateringar
+
+NÄR ADMIN ÄNDRAR SYSTEMSTANDARD:
+• Alla "inherit"-konton uppdateras automatiskt
+• Alla specifika versioner förblir oförändrade
+
+Rätt svar: c. inherit
+
+Detta är STANDARDINSTÄLLNINGEN för nya konton! 🎖️`
   }
 ]
 
