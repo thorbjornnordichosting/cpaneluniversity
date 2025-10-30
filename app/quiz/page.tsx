@@ -2077,8 +2077,8 @@ export default function Quiz() {
                     </p>
                   </div>
 
-                  <div className="bg-purple-500/10 backdrop-blur-3xl rounded-3xl p-8 max-h-[520px] overflow-y-auto border border-purple-400/20 shadow-xl shadow-purple-500/10">
-                    <h3 className="text-xl font-bold text-white mb-4 flex items-center sticky top-0 bg-purple-500/20 backdrop-blur-xl pb-4 -mx-8 px-8 pt-2 z-10 rounded-t-3xl">
+                  <div className="bg-purple-500/5 backdrop-blur-[48px] rounded-3xl p-8 max-h-[520px] overflow-y-auto border border-purple-300/10 shadow-2xl shadow-purple-500/20" style={{backdropFilter: 'blur(48px) saturate(180%)'}}>
+                    <h3 className="text-xl font-bold text-white mb-4 flex items-center sticky top-0 bg-purple-500/10 backdrop-blur-3xl pb-4 -mx-8 px-8 pt-2 z-10 rounded-t-3xl border-b border-purple-300/10" style={{backdropFilter: 'blur(32px) saturate(180%)'}}>
                       <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
