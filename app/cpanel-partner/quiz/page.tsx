@@ -15,12 +15,12 @@ interface Question {
 const questions: Question[] = [
   {
     id: 1,
-    question: "In modern installations of cPanel & WHM, when selecting DSO from the EasyApache 4 interface without mod_ruid2 or mpm_itk, what recommendation will be displayed to you automatically, directly from within the EasyApache 4 interface?",
+    question: "I moderna installationer av cPanel & WHM, när du väljer DSO från EasyApache 4-gränssnittet utan mod_ruid2 eller mpm_itk, vilken rekommendation visas automatiskt direkt i EasyApache 4-gränssnittet?",
     answers: [
-      "PHP DSO requires the use of the mod_ruid2 module to operate properly as a PHP handler. Please install mod_ruid2 if you intend to utilize the DSO as your PHP handler.",
-      "PHP DSO runs as the nobody user by default. In a shared hosting environment, this is a security issue.",
-      "PHP DSO requires a significant amount of system memory to operate properly. Please ensure that your system's specifications meet the appropriate requirements.",
-      "PHP DSO is recommended only for advanced administrators, and we suggest the use of FastCGI for most environments."
+      "PHP DSO kräver mod_ruid2-modulen för att fungera korrekt som PHP-handler. Installera mod_ruid2 om du avser att använda DSO som PHP-handler.",
+      "PHP DSO körs som nobody-användaren som standard. I en delad hosting-miljö är detta ett säkerhetsproblem.",
+      "PHP DSO kräver betydande systemminne för att fungera korrekt. Se till att ditt systems specifikationer uppfyller kraven.",
+      "PHP DSO rekommenderas endast för avancerade administratörer, och vi föreslår användning av FastCGI för de flesta miljöer."
     ],
     correctAnswer: 1,
     explanation: "PHP DSO (Dynamic Shared Object) kör som 'nobody'-användaren som standard, vilket är ett säkerhetsproblem i delade hosting-miljöer. EasyApache 4 varnar automatiskt om detta när du väljer DSO utan mod_ruid2 eller mpm_itk. Dessa moduler behövs för att köra PHP med individuella användar-rättigheter istället för 'nobody'.",
@@ -28,7 +28,7 @@ const questions: Question[] = [
 
 🏢 FÖRETAG: "SharedHost Sverige AB" - Webbhotell med 5,000 kunder
 📊 PROBLEM: Väljer PHP DSO i EasyApache 4
-🎯 VARNING: "PHP DSO runs as the nobody user"
+🎯 VARNING: "PHP DSO runs as the nobody-användaren"
 
 ---
 
@@ -50,7 +50,7 @@ KUND C: företag.se
 
 ---
 
-MED PHP DSO (nobody user):
+MED PHP DSO (nobody-användaren):
 
 Alla PHP-filer körs som "nobody":
 • webshop.se/index.php → Körs som: nobody
@@ -107,7 +107,7 @@ När du väljer DSO utan mod_ruid2:
 ┌─────────────────────────────────────┐
 │ ⚠️  SECURITY WARNING                │
 │                                     │
-│ PHP DSO runs as the nobody user    │
+│ PHP DSO runs as the nobody-användaren    │
 │ by default. In a shared hosting    │
 │ environment, this is a security    │
 │ issue.                             │
@@ -160,21 +160,21 @@ ALTERNATIV 3 - DSO + mpm_itk:
 SAMMANFATTNING:
 
 EasyApache 4 varnar:
-"PHP DSO runs as the nobody user by default. 
+"PHP DSO runs as the nobody-användaren by default. 
 In a shared hosting environment, this is a security issue."
 
 Detta är KRITISKT för shared hosting! ⚠️
 
-Rätt svar: b. PHP DSO runs as the nobody user by default. In a shared hosting environment, this is a security issue.`
+Rätt svar: b. PHP DSO körs som nobody-användaren som standard. I en delad hosting-miljö är detta ett säkerhetsproblem.`
   },
   {
     id: 2,
-    question: "Which of the following options accurately describes an action that one can perform from within WHM's EasyApache 4 interface?",
+    question: "Vilket av följande alternativ beskriver korrekt en åtgärd som kan utföras från WHM:s EasyApache 4-gränssnitt?",
     answers: [
-      "Change Apache's security settings to determine what kind of restrictions are in place for inbound HTTP requests.",
-      "Change the MPM that is used in your Apache installation.",
-      "Change the php.ini files that are utilized for each installed PHP version.",
-      "Change the kernel that is booted based on the active version of Apache as selected in EasyApache 4."
+      "Ändra Apaches säkerhetsinställningar för att bestämma vilka restriktioner som finns för inkommande HTTP-förfrågningar.",
+      "Ändra MPM som används i din Apache-installation.",
+      "Ändra php.ini-filerna som används för varje installerad PHP-version.",
+      "Ändra kernel som startas baserat på den aktiva versionen av Apache vald i EasyApache 4."
     ],
     correctAnswer: 1,
     explanation: "I EasyApache 4 kan du ändra MPM (Multi-Processing Module) som används i din Apache-installation. MPM styr hur Apache hanterar processer och trådar. Du kan välja mellan prefork (process-baserat), worker (tråd-baserat) eller event (asynkront). Detta är en av huvudfunktionerna i EasyApache 4-gränssnittet.",
@@ -313,13 +313,13 @@ EasyApache 4 låter INTE dig:
 ❌ Redigera php.ini (använd MultiPHP INI Editor)
 ❌ Ändra kernel (nonsens!)
 
-Rätt svar: b. Change the MPM that is used in your Apache installation.
+Rätt svar: b. Ändra MPM som används i din Apache-installation.
 
 Detta är en av de viktigaste funktionerna i EasyApache 4! 🎯`
   },
   {
     id: 3,
-    question: "If a user wants to utilize the system default version of PHP, which of the following options would they set for their account?",
+    question: "Om en användare vill använda systemets standard PHP-version, vilket av följande alternativ ska de välja för sitt konto?",
     answers: [
       "system",
       "ea-php55",
@@ -542,12 +542,12 @@ Detta är STANDARDINSTÄLLNINGEN för nya konton! 🎖️`
   },
   {
     id: 4,
-    question: "Given the following options, select the components or component combinations that would provide standard per-user process ownership for handling PHP content.",
+    question: "Givet följande alternativ, välj de komponenter eller komponentkombinationer som skulle ge standard per-användare processägarskap för hantering av PHP-innehåll.",
     answers: [
-      "DSO (mod_fcgid) WITH Userdir (mod_userdir)",
-      "FCGI (mod_fcgid) OR Worker (mpm_worker_module) OR CGI (mod_cgi)",
-      "CGI (mod_cgi) WITH Userdir (mod_userdir)",
-      "suPHP (mod_suphp) OR Ruid2 (mod_ruid2) OR PHP-FPM"
+      "DSO (mod_fcgid) MED Userdir (mod_userdir)",
+      "FCGI (mod_fcgid) ELLER Worker (mpm_worker_module) ELLER CGI (mod_cgi)",
+      "CGI (mod_cgi) MED Userdir (mod_userdir)",
+      "suPHP (mod_suphp) ELLER Ruid2 (mod_ruid2) ELLER PHP-FPM"
     ],
     correctAnswer: 3,
     explanation: "suPHP, mod_ruid2 och PHP-FPM är de komponenter som tillhandahåller standard per-user process ownership för PHP. Detta innebär att varje användares PHP-processer körs med deras egna användarrättigheter, inte som 'nobody' eller 'apache'. Detta är kritiskt för säkerhet i shared hosting-miljöer där flera kunder delar samma server.",
@@ -738,7 +738,7 @@ GER INTE per-user ownership:
 ❌ CGI själv (utan suEXEC)
 ❌ Userdir (är inte PHP-handler)
 
-RÄTT SVAR: d. suPHP (mod_suphp) OR Ruid2 (mod_ruid2) OR PHP-FPM
+RÄTT SVAR: d. suPHP (mod_suphp) ELLER Ruid2 (mod_ruid2) ELLER PHP-FPM
 
 I MODERNA cPanel-installationer:
 → Använd PHP-FPM!
@@ -748,12 +748,12 @@ Detta är KRITISKT för shared hosting-säkerhet! 🔒`
   },
   {
     id: 5,
-    question: "When operating within a cPanel & WHM environment, which of these commands would display all available EasyApache 4 packages from within the server's command line?",
+    question: "När du arbetar inom en cPanel & WHM-miljö, vilket av följande gränssnitt kan du använda för att ändra serverns standard PHP-version?",
     answers: [
-      "This can be adjusted from within WHM's MultiPHP Manager interface.",
-      "This can be adjusted from within WHM's PHP Configuration interface.",
-      "This can be adjusted from within WHM's PHP Versions interface.",
-      "This can be adjusted from within WHM's Apache Configuration interface."
+      "Detta kan justeras från WHM:s MultiPHP Manager-gränssnitt.",
+      "Detta kan justeras från WHM:s PHP Configuration-gränssnitt.",
+      "Detta kan justeras från WHM:s PHP Versions-gränssnitt.",
+      "Detta kan justeras från WHM:s Apache Configuration-gränssnitt."
     ],
     correctAnswer: 0,
     explanation: "Du ändrar serverns default PHP-version i WHM's MultiPHP Manager-gränssnitt. Detta är den centrala platsen för all PHP-versionshantering i cPanel & WHM. Här kan du sätta systemstandarden, ändra individuella domäners versioner och se alla installerade PHP-versioner.",
@@ -778,12 +778,12 @@ Rätt svar: a. MultiPHP Manager`
   },
   {
     id: 6,
-    question: "Which of the following accurately indicates the user that processes created for the DSO handler are owned by?",
+    question: "Vilket av följande anger korrekt den användare som processer skapade för DSO-hanteraren ägs av?",
     answers: [
-      "nobody user",
+      "nobody-användaren",
       "root",
-      "account user",
-      "apache user"
+      "kontoägaren",
+      "apache-användaren"
     ],
     correctAnswer: 0,
     explanation: "DSO (mod_php) kör processer som 'nobody'-användaren. Detta är det klassiska säkerhetsproblemet med DSO i shared hosting - alla kunders PHP-filer körs som samma 'nobody' användare, vilket gör att de potentiellt kan läsa varandras filer. Detta är varför modern cPanel rekommenderar PHP-FPM istället.",
@@ -801,11 +801,11 @@ Alla PHP-processer ägs av 'nobody'!
 
 Detta är samma problem som fråga 1 och 4 handlade om.
 
-Rätt svar: a. nobody user`
+Rätt svar: a. nobody-användaren`
   },
   {
     id: 7,
-    question: "In modern installations of cPanel & WHM, which of the following PHP configuration values are set automatically during the Initial Setup Assistant steps?",
+    question: "I moderna installationer av cPanel & WHM, vilken av följande PHP-konfigurationsvärden sätts automatiskt under Initial Setup Assistant-stegen?",
     answers: [
       "memory_limit",
       "safe_mode",
@@ -832,12 +832,12 @@ Rätt svar: a. memory_limit`
   },
   {
     id: 8,
-    question: "Which of the following options best describes the procedure needed to enable the BlueHost SymLink Protection Patch?",
+    question: "Vilket av följande alternativ beskriver bäst proceduren som behövs för att aktivera BlueHost SymLink Protection Patch?",
     answers: [
-      "Toggle the corresponding option found in WHM's Security Center >> Apache Security Manager interface.",
-      "Toggle the corresponding option found in WHM's Apache Configuration's Global Configuration interface.",
-      "Toggle the corresponding option found in WHM's Security Center >> Security Policies interface.",
-      "Toggle the corresponding option found in WHM's Tweak Settings interface, within the System tab."
+      "Växla motsvarande alternativ i WHM:s Security Center >> Apache Security Manager-gränssnitt.",
+      "Växla motsvarande alternativ i WHM:s Apache Configuration Global Configuration-gränssnitt.",
+      "Växla motsvarande alternativ i WHM:s Security Center >> Security Policies-gränssnitt.",
+      "Växla motsvarande alternativ i WHM:s Tweak Settings-gränssnitt, under System-fliken."
     ],
     correctAnswer: 3,
     explanation: "BlueHost SymLink Protection aktiveras i WHM → Tweak Settings → System tab. Här hittar du 'Symlink Protection' som skyddar mot symlink-attacker där skadliga användare försöker skapa symboliska länkar till andra användares filer.",
@@ -861,12 +861,12 @@ Rätt svar: d. Tweak Settings → System tab`
   },
   {
     id: 9,
-    question: "EasyApache 4 is known for improving the speed of the build process, but what is another benefit of using EasyApache 4 over EasyApache 3?",
+    question: "EasyApache 4 är känd för att förbättra hastigheten på byggprocessen, men vad är en annan fördel med att använda EasyApache 4 över EasyApache 3?",
     answers: [
-      "EA4 gets updated daily by apt-get.",
-      "Reduced chance of critical Apache failures.",
-      "The source servers for EA3 are less reliable than those for EA4.",
-      "The PHP modules from EA3 automatically get transferred to EA4."
+      "EA4 uppdateras dagligen via apt-get.",
+      "Minskad risk för kritiska Apache-fel.",
+      "Källservrarna för EA3 är mindre tillförlitliga än de för EA4.",
+      "PHP-modulerna från EA3 överförs automatiskt till EA4."
     ],
     correctAnswer: 1,
     explanation: "EasyApache 4 minskar risken för kritiska Apache-fel eftersom det använder RPM-paket (pre-compiled) istället för att bygga från källkod som EA3 gjorde. Färre kompileringsfel, mer stabil kod och enklare rollback vid problem.",
@@ -890,11 +890,11 @@ Rätt svar: b. Reduced chance of critical Apache failures`
   },
   {
     id: 10,
-    question: "During PHP requests, which of the following statements accurately describes how the DSO handler processes the request?",
+    question: "Under PHP-förfrågningar, vilket av följande påståenden beskriver korrekt hur DSO-hanteraren bearbetar förfrågan?",
     answers: [
       "PHP handling operates by spawning child \"dso\" processes to handle each individual request.",
       "PHP handling operates by spawning child \"php\" processes to handle each individual request.",
-      "PHP handling operates internally by Apache's own processes.",
+      "PHP-hantering fungerar internt av Apaches egna processer.",
       "PHP handling operates by spawning \"php\" processes for PHP requests, and \"dso\" processes for requests that involve database interaction."
     ],
     correctAnswer: 2,
@@ -920,12 +920,12 @@ Rätt svar: c. PHP operates internally by Apache's own processes`
   },
   {
     id: 11,
-    question: "In a cPanel & WHM environment, which of the following options accurately describes what the system default PHP version setting defined in WHM's MultiPHP Manager interface represents?",
+    question: "I en cPanel & WHM-miljö, vilket av följande alternativ beskriver korrekt vad systemets standard PHP-versionsinställning i WHM:s MultiPHP Manager-gränssnitt representerar?",
     answers: [
-      "The version that is used when command-line use of the php binary is executed, by default.",
-      "The version that is used if a domain does not already have a specific version selected for it.",
-      "The version that is installed first, before any other version is installed, but still requiring that domains specifically select the version that they would like to use before PHP will be functional in their account.",
-      "The version that is used as a fallback if the version selected for a domain is not functioning properly."
+      "Versionen som används när kommandoradsanvändning av php-binären körs, som standard.",
+      "Versionen som används om en domän inte redan har en specifik version vald för den.",
+      "Versionen som installeras först, före någon annan version installeras, men kräver fortfarande att domäner specifikt väljer den version de vill använda innan PHP fungerar i deras konto.",
+      "Versionen som används som fallback om versionen vald för en domän inte fungerar korrekt."
     ],
     correctAnswer: 1,
     explanation: "System default PHP-versionen är den version som används om en domän INTE har en specifik version vald (dvs. använder 'inherit'). Detta är exakt vad fråga 3 handlade om - när ett konto har 'inherit' inställt används systemstandarden.",
@@ -952,7 +952,7 @@ Rätt svar: b. The version used if domain doesn't have specific version selected
   },
   {
     id: 12,
-    question: "Which of the following PHP handlers works on only one PHP version at a time?",
+    question: "Vilken av följande PHP-hanterare fungerar med endast en PHP-version åt gången?",
     answers: [
       "CGI",
       "PHP-FPM",
@@ -980,12 +980,12 @@ Rätt svar: d. DSO`
   },
   {
     id: 13,
-    question: "You're operating in a PHP 8.3 environment and using DSO as your PHP handler. You've created a .user.ini file in your website's public_html folder, but are not seeing your changes reflected. Of the following choices, which of these most accurately describes the issue?",
+    question: "Du arbetar i en PHP 8.3-miljö och använder DSO som PHP-hanterare. Du har skapat en .user.ini-fil i din webbplats public_html-mapp, men ser inte dina ändringar. Vilket av följande beskriver problemet mest korrekt?",
     answers: [
-      "A php.ini file stored in public_html should be used instead, containing only the values that need to be altered from the global defaults.",
-      "An .htaccess file stored in public_html should be used instead, containing the appropriate syntax for declaring PHP values.",
-      "A file that ends in .ini should be created in the /opt/cpanel/ea-php83/root/etc/php.d folder, containing the values that need to be altered from the global defaults.",
-      "The .user.ini should be in the user's home folder, not in the public_html folder."
+      "En php.ini-fil lagrad i public_html bör användas istället, som endast innehåller värden som behöver ändras från globala standarder.",
+      "En .htaccess-fil lagrad i public_html bör användas istället, med lämplig syntax för att deklarera PHP-värden.",
+      "En fil som slutar på .ini bör skapas i /opt/cpanel/ea-php83/root/etc/php.d-mappen, med värden som behöver ändras från globala standarder.",
+      ".user.ini bör vara i användarens hemmapp, inte i public_html-mappen."
     ],
     correctAnswer: 1,
     explanation: ".user.ini fungerar INTE med DSO! Med DSO måste du använda .htaccess med php_value/php_flag direktiv. .user.ini fungerar bara med PHP-FPM och FastCGI.",
@@ -1012,12 +1012,12 @@ Rätt svar: b. Use .htaccess with DSO`
   },
   {
     id: 14,
-    question: "In a cPanel & WHM environment operating with EasyApache 4, one could define an EasyApache profile as which of the following?",
+    question: "I en cPanel & WHM-miljö som kör EasyApache 4, kan man definiera en EasyApache-profil som vilket av följande?",
     answers: [
-      "A planning tool used to design an ideal Apache environment without making any real changes.",
-      "Profiles were used in EasyApache 3 but are no longer utilized as of EasyApache 4.",
-      "A list of steps used to instruct the user on how to install Apache from the command-line interface.",
-      "A collection of packages that can be provisioned."
+      "Ett planeringsverktyg för att designa en ideal Apache-miljö utan att göra några verkliga ändringar.",
+      "Profiler användes i EasyApache 3 men används inte längre i EasyApache 4.",
+      "En lista med steg för att instruera användaren om hur man installerar Apache från kommandoradsgränssnittet.",
+      "En samling av paket som kan provisoneras."
     ],
     correctAnswer: 3,
     explanation: "En EasyApache 4 profile är en samling av paket (PHP-versioner, Apache-moduler, PHP-extensions) som kan provisoneras tillsammans. Profiles fungerar som templates eller snapshots av din Apache/PHP-konfiguration.",
@@ -1047,7 +1047,7 @@ Rätt svar: d. A collection of packages that can be provisioned`
   },
   {
     id: 15,
-    question: "Which of the following options is NOT a real Multi-Processing Module (MPM) available for installation within WHM's EasyApache 4 interface?",
+    question: "Vilket av följande alternativ är INTE en riktig Multi-Processing Module (MPM) tillgänglig för installation inom WHM:s EasyApache 4-gränssnitt?",
     answers: [
       "ITK",
       "Prefork",
@@ -1075,7 +1075,7 @@ Rätt svar: d. Postfork`
   },
   {
     id: 16,
-    question: "Which of the following options indicates the HTTP status code that produces the error: 'Unauthorized. A password is needed to see this page. The browser should prompt for a username and password.'?",
+    question: "Vilket av följande alternativ indikerar HTTP-statuskoden som producerar felet: 'Unauthorized. Ett lösenord behövs för att se denna sida. Webbläsaren ska be om användarnamn och lösenord.'?",
     answers: [
       "500",
       "401",
@@ -1108,7 +1108,7 @@ Rätt svar: b. 401`
   },
   {
     id: 17,
-    question: "Which of the following yum commands would remove, or uninstall, the mod_speling RPM?",
+    question: "Vilket av följande yum-kommandon skulle ta bort, eller avinstallera, mod_speling RPM?",
     answers: [
       "yum -r ea-apache24-mod_speling",
       "yum -e ea-apache24-mod_speling",
@@ -1139,7 +1139,7 @@ Rätt svar: c. yum remove ea-apache24-mod_speling`
   },
   {
     id: 18,
-    question: "Which of the following options indicates the HTTP status code that results in: 'OK. The request was successful.'?",
+    question: "Vilket av följande alternativ indikerar HTTP-statuskoden som resulterar i: 'OK. Förfrågan lyckades.'?",
     answers: [
       "500",
       "101",
@@ -1172,12 +1172,12 @@ Rätt svar: d. 200`
   },
   {
     id: 19,
-    question: "How can you change the default PHP version of a cPanel & WHM server using the command-line?",
+    question: "Hur kan du ändra standard PHP-versionen på en cPanel & WHM-server med kommandoraden?",
     answers: [
-      "Use the /usr/local/cpanel/bin/rebuild_phpconf command.",
+      "Använd /usr/local/cpanel/bin/rebuild_phpconf-kommandot.",
       "Use yum to install the RPM labeled \"php##-default\" (## representing the desired PHP version).",
-      "Use the /usr/local/bin/ea_php_defaults command.",
-      "This cannot be performed via the command-line, and only the WHM interface should be used to make this change."
+      "Använd /usr/local/bin/ea_php_defaults-kommandot.",
+      "Detta kan inte utföras via kommandoraden, endast WHM-gränssnittet bör användas för denna ändring."
     ],
     correctAnswer: 2,
     explanation: "ea_php_defaults är CLI-verktyget för att ändra default PHP-version från kommandoraden. Detta är samma som att ändra i WHM → MultiPHP Manager, fast via CLI.",
@@ -1202,7 +1202,7 @@ Rätt svar: c. /usr/local/bin/ea_php_defaults`
   },
   {
     id: 20,
-    question: "When operating within a cPanel & WHM environment, which of these commands would display all available EasyApache 4 packages from within the server's command line?",
+    question: "När du arbetar inom en cPanel & WHM-miljö, vilket av följande gränssnitt kan du använda för att ändra serverns standard PHP-version?",
     answers: [
       "yum find \"ea-*\"",
       "rpm show \"ea-*\"",
@@ -1237,7 +1237,7 @@ Rätt svar: d. yum list "ea-*"`
   },
   {
     id: 21,
-    question: "When using MultiPHP, which of the following PHP handlers can NOT be assigned by the server administrator to more than one PHP version at a time concurrently?",
+    question: "När du använder MultiPHP, vilken av följande PHP-hanterare kan INTE tilldelas av serveradministratören till mer än en PHP-version åt gången samtidigt?",
     answers: [
       "suPHP",
       "DSO",
@@ -1266,12 +1266,12 @@ Rätt svar: b. DSO`
   },
   {
     id: 22,
-    question: "When referencing the Apache error log, what does '[core:error]' represent in a log entry?",
+    question: "När du refererar till Apache error log, vad representerar '[core:error]' i en loggpost?",
     answers: [
-      "An indication that this error comes from the Linux kernel, NOT the Apache software.",
-      "The name of the Apache module that triggered the error.",
-      "The log entry's severity level.",
-      "An arbitrary label assigned to this type of log entry via the httpd.conf file."
+      "En indikation att detta fel kommer från Linux-kärnan, INTE Apache-programvaran.",
+      "Namnet på Apache-modulen som utlöste felet.",
+      "Loggpostens allvarlighetsgrad.",
+      "En godtycklig etikett tilldelad denna typ av loggpost via httpd.conf-filen."
     ],
     correctAnswer: 1,
     explanation: "I moderna Apache-loggar representerar [module:level] formatet både modulnamnet och severity level. 'core' är Apache-modulen och 'error' är severity level. Så [core:error] betyder: error från core-modulen.",
@@ -1295,16 +1295,16 @@ Men frågan frågar troligen om hela [core:error], så: b. Module name`
   },
   {
     id: 23,
-    question: "Which of the following terms can be described as a special part of a process that shares resources with others in the same process, and can execute commands?",
+    question: "Vilket av följande termer kan beskrivas som en speciell del av en process som delar resurser med andra i samma process och kan exekvera kommandon?",
     answers: [
       "Handler",
       "Inode",
-      "Thread",
+      "Tråd",
       "Fork"
     ],
     correctAnswer: 2,
     explanation: "En tråd (thread) är en del av en process som delar resurser med andra trådar men kan köra oberoende. Detta är fundamentalt för Worker MPM (multi-threaded) vs Prefork MPM (multi-process).",
-    example: `VERKLIGT SCENARIO - Threads vs Processes:
+    example: `VERKLIGT SCENARIO - Tråds vs Processes:
 
 PROCESS (Prefork MPM):
 Process 1: [Memory | Files | Resources]
@@ -1314,9 +1314,9 @@ Process 3: [Memory | Files | Resources]
 
 THREADS (Worker MPM):
 Process 1:
-  ├─ Thread A │
-  ├─ Thread B │ Delar: [Memory | Files | Resources]
-  └─ Thread C │
+  ├─ Tråd A │
+  ├─ Tråd B │ Delar: [Memory | Files | Resources]
+  └─ Tråd C │
 → Delar resurser inom processen!
 
 FÖRDELAR med threads:
@@ -1324,20 +1324,20 @@ FÖRDELAR med threads:
 • Snabbare kommunikation
 • Mer effektivt
 
-Rätt svar: c. Thread`
+Rätt svar: c. Tråd`
   },
   {
     id: 24,
     question: "Which of the following items can be described as any of the three things listed below? A command line program for installing software. A file format used to package software. The individual packages created in that format.",
     answers: [
       "Wildcard",
-      "Algorithm",
+      "Algoritm",
       "Grep",
-      "Regular Expression"
+      "Reguljärt Uttryck"
     ],
     correctAnswer: 3,
-    explanation: "Regular Expression (regex) är en speciell syntax för att beskriva sökmönster. Används överallt i Apache, .htaccess, rewrite-regler och PHP.",
-    example: `VERKLIGT SCENARIO - Regular Expressions:
+    explanation: "Reguljärt Uttryck (regex) är en speciell syntax för att beskriva sökmönster. Används överallt i Apache, .htaccess, rewrite-regler och PHP.",
+    example: `VERKLIGT SCENARIO - Reguljärt Uttrycks:
 
 I .htaccess:
 RewriteRule ^blog/([0-9]+)$ /post.php?id=$1
@@ -1351,16 +1351,16 @@ Matchar:
 ✅ blog/999
 ❌ blog/abc (inga siffror)
 
-Rätt svar: d. Regular Expression`
+Rätt svar: d. Reguljärt Uttryck`
   },
   {
     id: 25,
-    question: "How does the scl command know which version of PHP it should use?",
+    question: "Hur vet scl-kommandot vilken version av PHP den ska använda?",
     answers: [
-      "The .htaccess file, if it exists, is used for reference.",
-      "The system's default PHP version is always used.",
-      "The .php-version file, if it exists, is used for reference.",
-      "You provide the PHP version as a command-line argument."
+      ".htaccess-filen, om den finns, används som referens.",
+      "Systemets standard PHP-version används alltid.",
+      ".php-version-filen, om den finns, används som referens.",
+      "Du anger PHP-versionen som ett kommandoradsargument."
     ],
     correctAnswer: 3,
     explanation: "Du anger PHP-versionen direkt som argument till scl-kommandot. Det kollar inte filer - du specificerar det explicit.",
@@ -1381,7 +1381,7 @@ Rätt svar: d. You provide PHP version as argument`
   },
   {
     id: 26,
-    question: "What HTTP status code could be displayed in the Apache logs if a client requests a path containing a file or directory with incorrect permissions or improper user/group ownership values?",
+    question: "Vilken HTTP-statuskod kan visas i Apache-loggarna om en klient begär en sökväg som innehåller en fil eller katalog med felaktiga rättigheter eller felaktiga användar-/gruppägarskapsv värden?",
     answers: [
       "500",
       "401",
@@ -1413,7 +1413,7 @@ Rätt svar: c. 403`
   },
   {
     id: 27,
-    question: "In a cPanel & WHM environment, which of the following paths are used to store Apache's primary PHP configuration file (php.conf)?",
+    question: "I en cPanel & WHM-miljö, vilken av följande sökvägar används för att lagra Apaches primära PHP-konfigurationsfil (php.conf)?",
     answers: [
       "/etc/cpanel/ea4/",
       "/opt/cpanel/ea-php84/root/etc/",
@@ -1439,7 +1439,7 @@ Rätt svar: a. /etc/cpanel/ea4/`
   },
   {
     id: 28,
-    question: "Which of the following items can be described as any of the three things: A command line program for installing software, a file format used to package software, and the individual packages created in that format?",
+    question: "Vilket av följande kan beskrivas som alla tre: Ett kommandoradsprogram för att installera programvara, ett filformat för att paketera programvara, och de individuella paketen skapade i det formatet?",
     answers: [
       "RPM",
       "SCL",
@@ -1472,10 +1472,10 @@ Rätt svar: a. RPM`
     id: 29,
     question: "Which of the following best describes the highlighted portion '2326' in this Apache access log: '127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] \"GET /apache_pb.gif HTTP/1.0\" 200 2326'?",
     answers: [
-      "The HTTP status code.",
-      "The time taken to complete the request (in seconds).",
-      "The size of the returned file (in bytes).",
-      "The process ID of the Apache process that handled the request."
+      "HTTP-statuskoden.",
+      "Tiden det tog att slutföra förfrågan (i sekunder).",
+      "Storleken på den returnerade filen (i bytes).",
+      "Process-ID:t för Apache-processen som hanterade förfrågan."
     ],
     correctAnswer: 2,
     explanation: "2326 är storleken på den returnerade filen i bytes. Apache access log-formatet är: IP - user [timestamp] 'REQUEST' status_code size_in_bytes",
@@ -1497,25 +1497,25 @@ Rätt svar: c. The size of the returned file (in bytes)`
   },
   {
     id: 30,
-    question: "Which of the following best describes the difference between a process and a thread?",
+    question: "Vilket av följande beskriver bäst skillnaden mellan en process och en tråd?",
     answers: [
-      "Processes can contain multiple threads, and the threads contained in the process share its resources.",
-      "Threads and processes are used synonymously.",
-      "A thread is a special type of process that is utilized in HTTP 2.0.",
-      "Threads can contain multiple processes, and the processes contained in the thread share its resources."
+      "Processer kan innehålla flera trådar, och trådarna i processen delar dess resurser.",
+      "Tråds and processes are used synonymously.",
+      "En tråd är en speciell typ av process som används i HTTP 2.0.",
+      "Tråds can contain multiple processes, and the processes contained in the thread share its resources."
     ],
     correctAnswer: 0,
     explanation: "En process kan innehålla flera trådar, och dessa trådar delar processens resurser. Detta är fundamentalt för Apache MPMs - Prefork använder många processer, Worker använder processer med trådar.",
-    example: `VERKLIGT SCENARIO - Process vs Thread:
+    example: `VERKLIGT SCENARIO - Process vs Tråd:
 
 PROCESS:
 ├─ Memory space
 ├─ File descriptors
 ├─ Resources
 └─ Kan innehålla flera THREADS:
-    ├─ Thread 1 │
-    ├─ Thread 2 │ Delar allt ovan!
-    └─ Thread 3 │
+    ├─ Tråd 1 │
+    ├─ Tråd 2 │ Delar allt ovan!
+    └─ Tråd 3 │
 
 APACHE PREFORK:
 • 100 processer
