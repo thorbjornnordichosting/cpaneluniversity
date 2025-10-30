@@ -166,6 +166,156 @@ In a shared hosting environment, this is a security issue."
 Detta är KRITISKT för shared hosting! ⚠️
 
 Rätt svar: b. PHP DSO runs as the nobody user by default. In a shared hosting environment, this is a security issue.`
+  },
+  {
+    id: 2,
+    question: "Which of the following options accurately describes an action that one can perform from within WHM's EasyApache 4 interface?",
+    answers: [
+      "Change Apache's security settings to determine what kind of restrictions are in place for inbound HTTP requests.",
+      "Change the MPM that is used in your Apache installation.",
+      "Change the php.ini files that are utilized for each installed PHP version.",
+      "Change the kernel that is booted based on the active version of Apache as selected in EasyApache 4."
+    ],
+    correctAnswer: 1,
+    explanation: "I EasyApache 4 kan du ändra MPM (Multi-Processing Module) som används i din Apache-installation. MPM styr hur Apache hanterar processer och trådar. Du kan välja mellan prefork (process-baserat), worker (tråd-baserat) eller event (asynkront). Detta är en av huvudfunktionerna i EasyApache 4-gränssnittet.",
+    example: `VERKLIGT SCENARIO - Byta MPM i EasyApache 4:
+
+🏢 FÖRETAG: "HostPro AB" - cPanel-baserat webbhotell
+📊 PROBLEM: Dålig prestanda med prefork MPM
+🎯 LÖSNING: Byt till event MPM via EasyApache 4
+
+---
+
+🔧 EASYAPACHE 4 - Ändra MPM:
+
+STEG-FÖR-STEG:
+
+1. Logga in på WHM (port 2087)
+2. Sök efter "EasyApache 4"
+3. Klicka på "Customize"
+4. Gå till "Apache MPM" fliken
+5. Välj MPM:
+   ○ prefork (gammalt, stabilt)
+   ○ worker (snabbare)
+   ● event (snabbast!) ← Välj denna
+6. Klicka "Review" → "Provision"
+7. Vänta ~2-5 minuter
+8. Klar! Apache startar om automatiskt
+
+---
+
+📊 MPM-JÄMFÖRELSE:
+
+PREFORK MPM:
+• En process per request
+• Ingen tråd-delning
+• Mycket RAM (30MB per process)
+• Kompatibel med alla moduler
+• LÅNGSAM för hög trafik
+
+Exempel med 100 användare:
+• 100 processer × 30MB = 3GB RAM
+• CPU: Hög context-switching
+• Responstid: 2-3 sekunder
+
+WORKER MPM:
+• Tråd-baserat
+• Mindre RAM (2-5MB per tråd)
+• Snabbare än prefork
+• Några moduler fungerar inte
+
+Exempel med 100 användare:
+• 100 trådar × 3MB = 300MB RAM
+• CPU: Medium overhead
+• Responstid: 0.8-1.2 sekunder
+
+EVENT MPM (BÄST!):
+• Asynkron event-driven
+• Minimal RAM-användning
+• Snabbast för hög trafik
+• Modern och rekommenderad
+
+Exempel med 100 användare:
+• 8 processer + event loop
+• RAM: ~200MB total
+• CPU: Låg overhead
+• Responstid: 0.3-0.5 sekunder
+
+---
+
+💰 VERKLIGT CASE:
+
+FÖRE (prefork MPM):
+Server: 16GB RAM
+Max samtidiga: 200 användare
+RAM-användning: 95%
+Responstid: 2.8 sekunder
+Servrar behövda: 5
+
+EFTER (event MPM):
+Server: 16GB RAM
+Max samtidiga: 2,000 användare (10X!)
+RAM-användning: 25%
+Responstid: 0.4 sekunder (7X snabbare!)
+Servrar behövda: 1
+
+BESPARING: 4 servrar × 200€/mån = 800€/mån! 💰
+
+---
+
+❌ VARFÖR ANDRA ALTERNATIV ÄR FEL:
+
+a. "Apache security settings"
+→ Detta görs via WHM → Apache Configuration
+→ INTE via EasyApache 4
+
+c. "php.ini files"
+→ Detta görs via WHM → MultiPHP INI Editor
+→ INTE via EasyApache 4
+
+d. "Change kernel"
+→ Helt nonsens! Kernel ändras via grub
+→ Har INGET med Apache att göra!
+
+✅ b. "Change MPM"
+→ RÄTT! Detta är huvudfunktionen i EasyApache 4
+
+---
+
+🎯 EASYAPACHE 4 GRÄNSSNITT:
+
+┌─────────────────────────────────┐
+│ EasyApache 4                    │
+├─────────────────────────────────┤
+│ ▸ Currently Installed Packages  │
+│ ▸ Apache MPM ← DETTA!           │
+│   • prefork                     │
+│   • worker                      │
+│   • event ✓                     │
+│ ▸ PHP Versions                  │
+│ ▸ Apache Modules                │
+│ ▸ PHP Extensions                │
+└─────────────────────────────────┘
+
+---
+
+🏆 SAMMANFATTNING:
+
+EasyApache 4 låter dig:
+✅ Ändra Apache MPM (prefork/worker/event)
+✅ Installera PHP-versioner
+✅ Aktivera/inaktivera Apache-moduler
+✅ Installera PHP-extensions
+✅ Välja PHP-handler (DSO, FastCGI, etc)
+
+EasyApache 4 låter INTE dig:
+❌ Ändra Apache security settings (fel gränssnitt)
+❌ Redigera php.ini (använd MultiPHP INI Editor)
+❌ Ändra kernel (nonsens!)
+
+Rätt svar: b. Change the MPM that is used in your Apache installation.
+
+Detta är en av de viktigaste funktionerna i EasyApache 4! 🎯`
   }
 ]
 
