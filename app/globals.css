@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Quiz animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Apple-style Glassmorphism for example boxes */
+.glass-effect {
+  background: rgba(88, 28, 135, 0.15);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  box-shadow: 
+    0 8px 32px 0 rgba(88, 28, 135, 0.37),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.glass-effect-blue {
+  background: rgba(30, 58, 138, 0.15);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  box-shadow: 
+    0 8px 32px 0 rgba(30, 58, 138, 0.37),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Better scrollbar with glassmorphism */
+.example-scroll {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(167, 139, 250, 0.5) rgba(255, 255, 255, 0.05);
+}
+
+.example-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.example-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.example-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(167, 139, 250, 0.8), rgba(139, 92, 246, 0.8));
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.5);
+}
+
+.example-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(167, 139, 250, 1), rgba(139, 92, 246, 1));
+  box-shadow: 0 2px 12px rgba(139, 92, 246, 0.8);
+}
+
+/* Sticky header glassmorphism */
+.glass-header {
+  background: rgba(88, 28, 135, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 16px rgba(88, 28, 135, 0.4);
+}
+
+.glass-header-blue {
+  background: rgba(30, 58, 138, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.3);
+  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.4);
+}
+
+/* Better text formatting in examples */
+.example-text {
+  line-height: 2;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: rgba(243, 232, 255, 0.95);
+}
+
+/* Smooth gradient overlay for scroll areas */
+.scroll-gradient {
+  position: relative;
+}
+
+.scroll-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(88, 28, 135, 0.3), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scroll-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to top, rgba(88, 28, 135, 0.3), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Premium border gradient */
+.glass-border {
+  position: relative;
+  border-radius: 1rem;
+}
+
+.glass-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.5), rgba(139, 92, 246, 0.3), rgba(126, 34, 206, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}

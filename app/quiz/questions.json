@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "question": "För vilket av dessa system erbjuder LiteSpeed INTE en officiell LSCache plugin?",
+    "answers": ["Magento", "WordPress", "OctoberCMS", "Joomla"],
+    "correctAnswer": 2,
+    "shortExplanation": "LiteSpeed har officiella plugins för WordPress, Magento och Joomla - men INTE OctoberCMS."
+  },
+  {
+    "id": 2,
+    "question": "Vilken typ av arkitektur använder LiteSpeed?",
+    "answers": ["Process-driven Architecture", "Bovine-driven Architecture", "Beer-driven Architecture", "Event-driven Architecture"],
+    "correctAnswer": 3,
+    "shortExplanation": "LiteSpeed använder Event-driven Architecture för att hantera tusentals requests samtidigt."
+  },
+  {
+    "id": 3,
+    "question": "Vilket påstående beskriver bäst LiteSpeed's stöd för reCAPTCHA?",
+    "answers": ["LiteSpeed stöder bara reCAPTCHA när man installerar med reDIS", "LiteSpeed stöder bara CAPTCHA, inte reCAPTCHA", "LiteSpeed stöder inte reCAPTCHA", "LiteSpeed stöder reCAPTCHA"],
+    "correctAnswer": 3,
+    "shortExplanation": "LiteSpeed har fullt inbyggt stöd för Google reCAPTCHA."
+  },
+  {
+    "id": 4,
+    "question": "Vilket protokoll använder LiteSpeed för HTTP/3 support?",
+    "answers": ["TCP", "QUIC", "UDP", "SCTP"],
+    "correctAnswer": 1,
+    "shortExplanation": "QUIC (Quick UDP Internet Connections) används för HTTP/3."
+  },
+  {
+    "id": 5,
+    "question": "Vad är standardporten för LiteSpeed WebAdmin Console?",
+    "answers": ["7080", "8080", "80", "443"],
+    "correctAnswer": 0,
+    "shortExplanation": "Port 7080 är LiteSpeeds admin-port."
+  },
+  {
+    "id": 6,
+    "question": "Kan LiteSpeed läsa Apache .htaccess filer?",
+    "answers": ["Nej, aldrig", "Ja, direkt utan konvertering", "Bara med plugins", "Bara på Windows"],
+    "correctAnswer": 1,
+    "shortExplanation": "LiteSpeed är 100% kompatibel med Apache .htaccess."
+  }
+]
+
